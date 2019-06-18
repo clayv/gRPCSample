@@ -1,0 +1,21 @@
+syntax = "proto3";
+package gRPCSampleProto;
+
+option csharp_namespace = "gRPCSample";
+
+service gRPCSampleService {
+	rpc GetOrganization(OrganizationRequest) returns (OrganizationsResponse);
+}
+
+message OrganizationRequest {
+	int32 id = 1;
+}
+
+message Organization {
+	string name = 1;
+	int32 id = 2;
+}
+
+message OrganizationsResponse {
+	repeated Organization organizationList = 1;
+}
